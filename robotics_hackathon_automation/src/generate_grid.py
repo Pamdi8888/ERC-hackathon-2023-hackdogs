@@ -6,11 +6,25 @@ from shapely.geometry import Polygon
 from obstacle_detection import Wall, maze
 
 
+class Level:
+    def __init__(self, maze: List[Wall], n: int, grid, bounds, square_width, grid_array) -> None:
+        self.maze = maze
+        self.n = n
+        self.grid = grid
+        self.bounds = bounds
+        self.square_width = square_width
+        self.grid_array = grid_array
+
+    def get_grid_coord(self, x, y):
+        i = floor((x - self.bounds[0]) / self.square_width)
+        j = floor((y - self.bounds[1]) / self.square_width)
+        return i, j
+
 
 def maxi(a, b):
     return [ min(a[0], b[0]), min(a[1], b[1]), max(a[2], b[2]), max(a[3], b[3]) ]
 
-def generate_grid(maze: List[Wall], n) -> Tuple[List[Polygon], float, List[float]]:
+def generate_grid(maze: List[Wall], n) -> Level:
     # Divide the maze into n x n grid
     bounds: List[float] = list( maze[0].polygon.bounds)
     for wall in maze:
@@ -26,8 +40,8 @@ def generate_grid(maze: List[Wall], n) -> Tuple[List[Polygon], float, List[float
 
     square_width = width / n
     grid = []
+    grid_array = [list() for _ in range(n)]
     for i in range(n):
-        print(i)
         for j in range(n):
             x = bounds[0] + i * square_width
             y = bounds[1] + j * square_width
@@ -39,12 +53,21 @@ def generate_grid(maze: List[Wall], n) -> Tuple[List[Polygon], float, List[float
                     break
             if state == 1:
                 grid.append(box)
-    return grid, square_width, bounds
+                # 0 is wall
+                grid_array[i].append(0)
+            else:
+                # 1 is path
+                grid_array[i].append(1)
+    return Level(maze, n, grid, bounds, square_width, grid_array)
+
+
+
+    
 
 
 
 if __name__ == "__main__":
-    generate_grid(maze, 10)
+    # generate_grid(maze, 10)
         
 
     from matplotlib import pyplot as plt
@@ -58,7 +81,7 @@ if __name__ == "__main__":
     ax2.set_xlim(-6, 6)
     ax2.set_ylim(-6, 6)
 
-    bounds, square_width = generate_grid(maze, 200)
+    level = generate_grid(maze, 50)
 # poly = Polygon([(bounds[0], bounds[1]), (bounds[0], bounds[3]), (bounds[2], bounds[3]), (bounds[2], bounds[1])])
 # ax.set_xlim(bounds[0] -1 , bounds[2]+ 1)
 # ax.set_ylim(bounds[1] - 1, bounds[3] + 1)
@@ -68,9 +91,9 @@ if __name__ == "__main__":
         x, y = wall.polygon.exterior.xy
         ax1.plot(x, y)
 
-    for grid_box in bounds:
+    for grid_box in level.grid:
         x, y = grid_box.bounds[0], grid_box.bounds[1]
-        ax2.add_patch(Rectangle((x, y), square_width, square_width, fill=True, color='red'))
+        ax2.add_patch(Rectangle((x, y), level.square_width, level.square_width, fill=True, color='red'))
 
 # ax.plot(poly.exterior.xy[0], poly.exterior.xy[1])
 
