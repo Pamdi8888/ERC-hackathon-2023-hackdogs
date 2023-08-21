@@ -135,6 +135,7 @@ def djikstra_maze_array(maze_array, start, end, ax=None):
     NodeGraph.from_maze(maze_array, nodes, edges).plot()
     print("Nodes:", len(nodes))
     print("Edges:", len(edges))
+    return nodes, edges
 
 
 if __name__ == "__main__":
