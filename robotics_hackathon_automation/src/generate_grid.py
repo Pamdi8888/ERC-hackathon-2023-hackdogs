@@ -19,6 +19,11 @@ class Level:
         i = floor((x - self.bounds[0]) / self.square_width)
         j = floor((y - self.bounds[1]) / self.square_width)
         return i, j
+    
+    def get_square_center(self, x, y):
+        i = x * self.square_width + self.bounds[0]
+        j = y * self.square_width + self.bounds[1]
+        return i, j
 
 
 def maxi(a, b):

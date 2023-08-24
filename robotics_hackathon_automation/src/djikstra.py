@@ -126,13 +126,13 @@ def djikstra_maze_array(maze_array, start, end, ax=None):
     print("Edges:", len(graph.edges))
     print(f"Generating nodes took {time.perf_counter() - a} seconds")
     # print(graph.node_dict)
-    if ax is not None:
-        graph.plot()
+    # if ax is not None:
+    #     graph.plot()
     print(start, end)
     a = time.perf_counter()
     nodes, edges = djikstra(graph, start, end)
     print(f"Finding path took {time.perf_counter() - a} seconds")
-    NodeGraph.from_maze(maze_array, nodes, edges).plot()
+    # NodeGraph.from_maze(maze_array, nodes, edges).plot()
     print("Nodes:", len(nodes))
     print("Edges:", len(edges))
     return nodes, edges

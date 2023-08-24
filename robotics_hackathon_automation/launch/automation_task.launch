@@ -29,8 +29,8 @@
 	</node>
  
 	<!-- Add the nodes here -->
-    <!-- <node name="path_planner" pkg="maze_solver" type="path_planner.py" output="screen"/>
-    <node name="controller" pkg="maze_solver" type="controller.py" output="screen"/>
-	<node name="colour_detection" pkg="maze_solver" type="colour_detection.py" output="screen"/> -->
+     <node name="path_planner" pkg="robotics_hackathon_automation" type="path_planner.py" output="screen"/>
+    <node name="controller" pkg="robotics_hackathon_automation" type="controller.py" output="screen"/>
+	<!-- <node name="colour_detection" pkg="maze_solver" type="colour_detection.py" output="screen"/> --> 
 
 </launch>
