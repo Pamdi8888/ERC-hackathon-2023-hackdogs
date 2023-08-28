@@ -2,6 +2,7 @@
 #You need to name this node "color_detector"
 import rospy
 from std_msgs.msg import String
+import time
 
 import cv2
 from cv_bridge import CvBridge, CvBridgeError
@@ -19,14 +20,20 @@ def show_image(im):
 
 bridge = CvBridge()
 
+max_cones = 5
+state = time.time() - 10
+total = 0
 # Define a callback for the Image message
 def image_callback(img_msg):
+    global state
+    global total
     # log some info about the image topic
     try:
         cv_image = bridge.imgmsg_to_cv2(img_msg, "passthrough")
     except CvBridgeError:
         # rospy.logerr("CvBridge Error: {0}".format(e))
         print('error')
+        return
     lower_red = np.array([0, 0, 0], dtype = "uint8") 
 
     upper_red= np.array([255, 50, 255], dtype = "uint8")
@@ -36,10 +43,19 @@ def image_callback(img_msg):
     # cv2.imshow("red color detection", detected_output) 
     avg_color_per_row = np.average(detected_output, axis=1)
     avg_color = np.average(avg_color_per_row, axis=0)
-    if avg_color[0] > 1.5:
-        publisher.publish("Iron Extraction")
-    if avg_color[2] > 1:
-        publisher.publish("Zinc Extraction")
+    if total == max_cones:
+        publisher.publish("Task completed")
+        rospy.signal_shutdown("Task completed")
+    if time.time() - state > 10:
+        if avg_color[0] > 1.5:
+            publisher.publish("Iron Extraction")
+            total +=1
+            state = time.time()
+        if avg_color[2] > 1:
+            publisher.publish("Zinc Extraction")
+            total += 1
+            state = time.time()
+
 
     # cv2.waitKey(3)
     # Show the converted image

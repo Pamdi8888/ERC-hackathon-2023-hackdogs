@@ -119,19 +119,19 @@ def djikstra_maze_array(maze_array, start, end, ax=None):
     # Coordinates are reversed
     start = start[::-1]
     end = end[::-1]
-    a = time.perf_counter()
+    # a = time.perf_counter()
     graph = generate_nodes(maze_array, [start, end])
-    print("Nodes:", len(graph.nodes))
-    print("Valid points:", len(graph.valid_points))
-    print("Edges:", len(graph.edges))
-    print(f"Generating nodes took {time.perf_counter() - a} seconds")
+    # print("Nodes:", len(graph.nodes))
+    # print("Valid points:", len(graph.valid_points))
+    # print("Edges:", len(graph.edges))
+    # print(f"Generating nodes took {time.perf_counter() - a} seconds")
     # print(graph.node_dict)
     # if ax is not None:
     #     graph.plot()
-    print(start, end)
-    a = time.perf_counter()
+    # print(start, end)
+    # a = time.perf_counter()
     nodes, edges = djikstra(graph, start, end)
-    print(f"Finding path took {time.perf_counter() - a} seconds")
+    # print(f"Finding path took {time.perf_counter() - a} seconds")
     # NodeGraph.from_maze(maze_array, nodes, edges).plot()
     print("Nodes:", len(nodes))
     print("Edges:", len(edges))
