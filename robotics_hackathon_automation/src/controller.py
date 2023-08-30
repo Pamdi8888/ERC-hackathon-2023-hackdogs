@@ -83,6 +83,7 @@ def update_pos(msg):
             print("stuck")
             print("Goal: " + str(GOAL_X) + " " + str(GOAL_Y))
             print(" coordinates: " + str(current_x) + " " + str(current_y))
+            reached_angle = False
             # exit()
         past_5_time = time.time()
         past_5_coord = [current_x, current_y]
@@ -108,8 +109,9 @@ def update_pos(msg):
     else:
         rotate_direction = -1
 
-    if abs(goal_angle) < 0.1:
+    if abs(goal_angle) < 0.02:
         # print(" coordinates: " + str(current_x) + " " + str(current_y))
+        # print("reached angle, goal angle = " + str(goal_angle))
         reached_angle = True
 
 
@@ -129,34 +131,53 @@ for i in planned_path:
 
     move_cmd = Twist()
 
-    while not reached_angle:
-        # print(f"reached angle? {reached_angle}")
-        # print(f"goal angle = {goal_angle}")
-        # print(f"current angle = {current_angle}")
+    def correct_angle():
         move_cmd.linear.x = 0.0
         move_cmd.angular.z = 0.2 * rotate_direction
         cmd_vel.publish(move_cmd)
-        # print("done rotating")
         rate.sleep()
-        # if reached_angle:
-        #     print(f"reached angle? {reached_angle}")
-        #     print(f"current angle = {current_angle}")
-        #     print(f"goal angle = {goal_angle}")
+        if not reached_angle:
+            correct_angle()
 
+    # while not reached_angle:
+    #     # print(f"reached angle? {reached_angle}")
+    #     # print(f"goal angle = {goal_angle}")
+    #     # print(f"current angle = {current_angle}")
+    #     move_cmd.linear.x = 0.0
+    #     move_cmd.angular.z = 0.2 * rotate_direction
+    #     cmd_vel.publish(move_cmd)
+    #     # print("done rotating")
+    #     rate.sleep()
+    #     # if reached_angle:
+    #     #     print(f"reached angle? {reached_angle}")
+    #     #     print(f"current angle = {current_angle}")
+    #     #     print(f"goal angle = {goal_angle}")
+
+    correct_angle()
     move_cmd = Twist()
-
-    print(f"reached goal? {reached_goal}")
-    while not reached_goal:
-        # print(f"reached goal? {reached_goal}")
-        # print(f"current distance = {distance}")
-        # print(f"current angle = {current_angle}")
-        # print(f"goal angle = {goal_angle}")
+    def correct_distance():
         move_cmd.angular.z = 0.0
         move_cmd.linear.x = min(control_signal_distance, 0.2)
         cmd_vel.publish(move_cmd)
         rate.sleep()
-        if reached_goal:
-            print(f"reached goal? {reached_goal}")
-            print(f"current distance = {distance}")
+        if not reached_angle:
+            correct_angle()
+        if not reached_goal:
+            correct_distance()
+    correct_distance()
+
+
+    # while not reached_goal:
+    #     # print(f"reached goal? {reached_goal}")
+    #     # print(f"current distance = {distance}")
+    #     # print(f"current angle = {current_angle}")
+    #     # print(f"goal angle = {goal_angle}")
+    #     move_cmd.angular.z = 0.0
+    #     move_cmd.linear.x = min(control_signal_distance, 0.2)
+    #     cmd_vel.publish(move_cmd)
+    #     rate.sleep()
+    #     if reached_goal:
+    #         print(f"reached goal? {reached_goal}")
+    #         print(f"current distance = {distance}")
 
     cmd_vel.publish(Twist())

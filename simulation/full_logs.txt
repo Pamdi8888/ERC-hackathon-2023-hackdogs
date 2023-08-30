@@ -1,0 +1,208 @@
+Nodes: 4
+Edges: 3
+n used 70
+Nodes: 7
+Edges: 6
+n used 70
+Nodes: 10
+Edges: 9
+n used 70
+Nodes: 5
+Edges: 4
+n used 70
+Nodes: 5
+Edges: 4
+n used 70
+hi
+Zinc Extraction
+Iron Extraction
+Zinc Extraction
+Zinc Extraction
+Iron Extraction
+Task completed
+GOAL_X = -3.41
+GOAL_Y = -1.5299999999999998
+stuck
+Goal: -3.41 -1.5299999999999998
+ coordinates: -3.276434914442839 -2.4631848342881244
+GOAL_X = -3.524285714285714
+GOAL_Y = -0.797142857142857
+GOAL_X = -1.9814285714285713
+GOAL_Y = -0.797142857142857
+GOAL_X = -1.8199999999999998
+GOAL_Y = -1.54
+GOAL_X = -1.9814285714285713
+GOAL_Y = -0.797142857142857
+GOAL_X = -3.1814285714285715
+GOAL_Y = -0.797142857142857
+GOAL_X = -3.1814285714285715
+GOAL_Y = 1.088571428571429
+GOAL_X = -1.2957142857142858
+GOAL_Y = 1.088571428571429
+GOAL_X = -1.2957142857142858
+GOAL_Y = 2.46
+GOAL_X = -0.48999999999999977
+GOAL_Y = 2.52
+GOAL_X = -1.2957142857142858
+GOAL_Y = 2.46
+GOAL_X = -1.2957142857142858
+GOAL_Y = 1.2600000000000002
+GOAL_X = -3.01
+GOAL_Y = 1.2600000000000002
+stuck
+Goal: -3.01 1.2600000000000002
+ coordinates: -2.873464727313267 1.445815638228843
+GOAL_X = -3.01
+GOAL_Y = 0.4028571428571429
+GOAL_X = -1.124285714285714
+GOAL_Y = 0.4028571428571429
+GOAL_X = -1.124285714285714
+GOAL_Y = -0.797142857142857
+GOAL_X = 0.9328571428571433
+GOAL_Y = -0.797142857142857
+stuck
+Goal: 0.9328571428571433 -0.797142857142857
+ coordinates: 0.15139364373805694 -0.620018655803791
+stuck
+Goal: 0.9328571428571433 -0.797142857142857
+ coordinates: 0.1396600590923882 -0.6369855741079159
+stuck
+Goal: 0.9328571428571433 -0.797142857142857
+ coordinates: 0.17532831901259277 -0.6273804225248374
+stuck
+Goal: 0.9328571428571433 -0.797142857142857
+ coordinates: 0.14774948406952204 -0.6622873279678219
+stuck
+Goal: 0.9328571428571433 -0.797142857142857
+ coordinates: 0.32990907781721385 -0.6237579845345634
+GOAL_X = 0.9328571428571433
+GOAL_Y = 0.9171428571428571
+stuck
+Goal: 0.9328571428571433 0.9171428571428571
+ coordinates: 0.5131272683752693 2.9639164781572642
+stuck
+Goal: 0.9328571428571433 0.9171428571428571
+ coordinates: 0.5390412106441406 2.9137209732959435
+stuck
+Goal: 0.9328571428571433 0.9171428571428571
+ coordinates: 0.5964143695177445 2.8693513285228693
+stuck
+Goal: 0.9328571428571433 0.9171428571428571
+ coordinates: 0.5986510511200777 2.8097861338413708
+GOAL_X = 2.36
+GOAL_Y = 0.99
+GOAL_X = 0.9328571428571433
+GOAL_Y = 0.9171428571428571
+stuck
+Goal: 0.9328571428571433 0.9171428571428571
+ coordinates: 2.278317150386977 1.1279440387921422
+GOAL_X = 0.9328571428571433
+GOAL_Y = 2.288571428571429
+GOAL_X = 3.3328571428571427
+GOAL_Y = 2.288571428571429
+stuck
+Goal: 3.3328571428571427 2.288571428571429
+ coordinates: 1.3206049768096562 2.1339692237608703
+stuck
+Goal: 3.3328571428571427 2.288571428571429
+ coordinates: 1.3510523204098859 2.125672867294177
+stuck
+Goal: 3.3328571428571427 2.288571428571429
+ coordinates: 1.4895838374354087 2.1259101341477904
+GOAL_X = 3.37
+GOAL_Y = -1.5999999999999996
+stuck
+Goal: 3.37 -1.5999999999999996
+ coordinates: 3.0469085726104543 -1.7570622742022601
+GOAL_X = 3.3328571428571427
+GOAL_Y = -0.4542857142857143
+stuck
+Goal: 3.3328571428571427 -0.4542857142857143
+ coordinates: 3.1582428029443386 -1.6103414318214162
+stuck
+Goal: 3.3328571428571427 -0.4542857142857143
+ coordinates: 3.158632078007881 -1.6075223782754802
+GOAL_X = 4.018571428571428
+GOAL_Y = -0.4542857142857143
+GOAL_X = 4.018571428571428
+GOAL_Y = -1.654285714285714
+stuck
+Goal: 4.018571428571428 -1.654285714285714
+ coordinates: 3.901860792657235 -0.7587448086295999
+stuck
+Goal: 4.018571428571428 -1.654285714285714
+ coordinates: 3.902013990462242 -0.883109719030327
+GOAL_X = 6.97
+GOAL_Y = -1.5299999999999998
+[0m[ INFO] [1693396744.966796124]: Finished loading Gazebo ROS API Plugin.[0m
+[0m[ INFO] [1693396744.968196020]: waitForService: Service [/gazebo/set_physics_properties] has not been advertised, waiting...[0m
+[0m[ INFO] [1693396745.438373758]: waitForService: Service [/gazebo/set_physics_properties] is now available.[0m
+[0m[ INFO] [1693396745.471571233, 710.574000000]: Physics dynamic reconfigure ready.[0m
+[0m[ INFO] [1693396746.358194125, 710.660000000]: Camera Plugin: Using the 'robotNamespace' param: '/'[0m
+[0m[ INFO] [1693396746.367276945, 710.660000000]: Camera Plugin (ns = /)  <tf_prefix_>, set to ""[0m
+[0m[ INFO] [1693396746.833291866, 710.660000000]: Laser Plugin: Using the 'robotNamespace' param: '/'[0m
+[0m[ INFO] [1693396746.833434311, 710.660000000]: Starting Laser Plugin (ns = /)[0m
+[0m[ INFO] [1693396746.844974048, 710.660000000]: Laser Plugin (ns = /)  <tf_prefix_>, set to ""[0m
+[0m[ INFO] [1693396746.901444007, 710.660000000]: Starting plugin DiffDrive(ns = //)[0m
+[0m[ INFO] [1693396746.901503106, 710.660000000]: DiffDrive(ns = //): <rosDebugLevel> = na[0m
+[0m[ INFO] [1693396746.902128508, 710.660000000]: DiffDrive(ns = //): <tf_prefix> = [0m
+[0m[ INFO] [1693396746.904084676, 710.660000000]: DiffDrive(ns = //): Advertise joint_states[0m
+[0m[ INFO] [1693396746.912288650, 710.660000000]: DiffDrive(ns = //): Try to subscribe to cmd_vel[0m
+[0m[ INFO] [1693396746.913941291, 710.660000000]: DiffDrive(ns = //): Subscribe to cmd_vel[0m
+[0m[ INFO] [1693396746.914285241, 710.660000000]: DiffDrive(ns = //): Advertise odom on odom [0m
+... logging to /home/avurd/.ros/log/9d1a5a58-472c-11ee-956e-01b092bc7122/roslaunch-avurd-virt-41912.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+]2;/home/avurd/catkin_ws/src/ERC-hackathon-2023-hackdogs/robotics_hackathon_automation/launch/automation_task.launch
+[1mstarted roslaunch server http://avurd-virt:39989/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /gazebo/enable_ros_network: True
+ * /robot_description: <?xml version="1....
+ * /robot_state_publisher/publish_frequency: 30.0
+ * /rosdistro: noetic
+ * /rosversion: 1.16.0
+ * /use_sim_time: True
+
+NODES
+  /
+    colour_detection (robotics_hackathon_automation/colour_detection.py)
+    controller (robotics_hackathon_automation/controller.py)
+    gazebo (gazebo_ros/gzserver)
+    gazebo_gui (gazebo_ros/gzclient)
+    path_planner (robotics_hackathon_automation/path_planner.py)
+    robot_state_publisher (robot_state_publisher/robot_state_publisher)
+    spawn_urdf (gazebo_ros/spawn_model)
+
+auto-starting new master
+[1mprocess[master]: started with pid [41922][0m
+[1mROS_MASTER_URI=http://localhost:11311[0m
+]2;/home/avurd/catkin_ws/src/ERC-hackathon-2023-hackdogs/robotics_hackathon_automation/launch/automation_task.launch http://localhost:11311
+[1msetting /run_id to 9d1a5a58-472c-11ee-956e-01b092bc7122[0m
+[1mprocess[rosout-1]: started with pid [41932][0m
+started core service [/rosout]
+[1mprocess[gazebo-2]: started with pid [41939][0m
+[1mprocess[gazebo_gui-3]: started with pid [41944][0m
+[1mprocess[spawn_urdf-4]: started with pid [41946][0m
+[1mprocess[robot_state_publisher-5]: started with pid [41950][0m
+[1mprocess[path_planner-6]: started with pid [41951][0m
+[1mprocess[controller-7]: started with pid [41952][0m
+[1mprocess[colour_detection-8]: started with pid [41958][0m
+[1m[path_planner-6] process has finished cleanly
+log file: /home/avurd/.ros/log/9d1a5a58-472c-11ee-956e-01b092bc7122/path_planner-6*.log[0m
+[1m[colour_detection-8] process has finished cleanly
+log file: /home/avurd/.ros/log/9d1a5a58-472c-11ee-956e-01b092bc7122/colour_detection-8*.log[0m
+[1m[controller-7] process has finished cleanly
+log file: /home/avurd/.ros/log/9d1a5a58-472c-11ee-956e-01b092bc7122/controller-7*.log[0m
+[robot_state_publisher-5] killing on exit
+[gazebo_gui-3] killing on exit
+[gazebo-2] killing on exit
+[rosout-1] killing on exit
+[master] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m

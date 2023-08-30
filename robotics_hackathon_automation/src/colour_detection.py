@@ -45,13 +45,16 @@ def image_callback(img_msg):
     avg_color = np.average(avg_color_per_row, axis=0)
     if total == max_cones:
         publisher.publish("Task completed")
+        print("Task completed")
         rospy.signal_shutdown("Task completed")
     if time.time() - state > 10:
         if avg_color[0] > 1.5:
+            print("Iron Extraction")
             publisher.publish("Iron Extraction")
             total +=1
             state = time.time()
         if avg_color[2] > 1:
+            print("Zinc Extraction")
             publisher.publish("Zinc Extraction")
             total += 1
             state = time.time()
