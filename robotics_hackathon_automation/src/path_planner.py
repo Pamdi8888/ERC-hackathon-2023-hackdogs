@@ -6,25 +6,24 @@ import rospy
 
 from robotics_hackathon_automation.msg import Coordinates
 from geometry_msgs.msg import Point
-from helpers.graphs import NodeGraph
-from matplotlib.patches import Rectangle
+# from helpers.graphs import NodeGraph
+# from matplotlib.patches import Rectangle
 import obstacle_detection as obsdet
-from shapely.geometry import LineString
+# from shapely.geometry import LineString
 
 from helpers import generate_grid
 from djikstra import djikstra_maze_array
 
 
 
-maze = obsdet.maze
 from matplotlib import pyplot as plt
 
 
 # fig, [[ax1, ax2], [ax3, ax4]] = plt.subplots(2, 2)
 
 fig, ax = plt.subplots()
-
-# set limits of both axes to be the same
+#
+# # set limits of both axes to be the same
 ax.set_xlim(-6, 6)
 ax.set_ylim(-6, 6)
 # ax2.set_xlim(-6, 6)
@@ -41,9 +40,6 @@ ax.set_ylim(-6, 6)
 # ax.set_xlim(bounds[0] -1 , bounds[2]+ 1)
 # ax.set_ylim(bounds[1] - 1, bounds[3] + 1)
 
-for wall in maze:
-    x, y = wall.polygon.exterior.xy
-    ax.plot(x, y)
 
 
 # Plot grid array 
@@ -65,8 +61,12 @@ rospy.init_node("path_planner")
 publisher = rospy.Publisher('planned_path', Coordinates, queue_size=10)
 
 
+maze = obsdet.maze
 start = (-5.2, -2.19)
 targets = [(5.18, -2.19), (1.58, -2.26),  (-2.28, 1.86), (0.57, 0.33), (-3.61, -2.20)]
+for wall in maze:
+    x, y = wall.polygon.exterior.xy
+    ax.plot(x, y)
 
 def find_closest(x, li):
     min_dist = (x[0] - li[0][0])**2 + (x[1] - li[0][1])**2
@@ -87,7 +87,7 @@ while i < len(targets):
 nodes = []
 edges = []
 state = 1
-for n in range(50, 100, 3):
+for n in range(70, 100, 3):
     level = generate_grid(maze, n)
 
     # for grid_box in level.grid:
@@ -111,6 +111,7 @@ for n in range(50, 100, 3):
             state = 0
             break
         nodes.append(extra_nodes)
+        print("n used", n)
         start = i
     if state:
         break
@@ -138,7 +139,7 @@ def check_useless(path):
 
         if valid: 
             break
-    print(path)
+    # print(path)
     return path
 
 
@@ -148,10 +149,11 @@ new_nodes = []
 for path in nodes:
     real_nodes = list(map(convert, path))
     new_nodes.append(real_nodes[::-1])
-    # for node in real_nodes[1:-1]:
-    #     ax.scatter(*node, color='black')
-    # ax.scatter(*real_nodes[0], color='green')
-    # ax.scatter(*real_nodes[-1], color='red')
+    for node in real_nodes[1:-1]:
+        ax.scatter(*node, color='black')
+    ax.scatter(*real_nodes[0], color='green')
+    ax.scatter(*real_nodes[-1], color='red')
+# plt.show()
 # print(nodes)
 # print(new_nodes, state)
 
@@ -164,7 +166,7 @@ for path in new_nodes:
 
 total.append(new_targets[-1])
 
-print(total)
+# print(total)
 
 def makePoint(point):
     return Point(x = point[0], y = point[1])
