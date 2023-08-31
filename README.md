@@ -5,9 +5,9 @@
  - [Druva D](./reports/Druva.md)
  - Amod Gawade
  - Param Gandhi
- - Anand Hariharan
+ - [Anand Hariharan](https://1drv.ms/w/s!AhugIppSSs8ygwLjTqBE-Uh8sa5k?e=clWnEg)
  - [Atul M](./reports/Atul.md)
- - Padi Sudeep 
+ - [Padi Sudeep](https://1drv.ms/w/s!AhugIppSSs8ygwLjTqBE-Uh8sa5k?e=clWnEg)
 
 ## Electronics
  - [Material](./Electronics_Subsystem)
