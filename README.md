@@ -1,7 +1,7 @@
 # ERC Hackathon 2023: Team Hackdogs
 
 
-## Team Members (Alphabetical)
+## Team Members
  - [Druva D](./reports/Druva.md)
  - Amod Gawade
  - [Param Gandhi](https://github.com/Pamdi8888)
